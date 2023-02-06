@@ -2,7 +2,7 @@ import * as express from 'express';
 import { Service } from 'typedi';
 import { OrmRepository } from 'typeorm-typedi-extensions';
 
-import { User } from '../api/models/User';
+import { Users } from '../api/models/Users';
 import { UserRepository } from '../api/repositories/UserRepository';
 import { Logger, LoggerInterface } from '../decorators/Logger';
 
@@ -31,14 +31,14 @@ export class AuthService {
         return undefined;
     }
 
-    public async validateUser(username: string, password: string): Promise<User> {
+    public async validateUser(username: string, password: string): Promise<Users> {
         const user = await this.userRepository.findOne({
             where: {
                 username,
             },
         });
 
-        if (await User.comparePassword(user, password)) {
+        if (await Users.comparePassword(user, password)) {
             return user;
         }
 

@@ -2,12 +2,12 @@ import * as Faker from 'faker';
 import { define } from 'typeorm-seeding';
 import * as uuid from 'uuid';
 
-import { Photo } from '../../api/models/Photo';
+import { Photos } from '../../api/models/Photos';
 
-define(Photo, (faker: typeof Faker) => {
+define(Photos, (faker: typeof Faker) => {
     const path = faker.image.cats();
 
-    const photo = new Photo();
+    const photo = new Photos();
     photo.id = uuid.v1();
     photo.path = path;
     photo.kind = 'avatar';

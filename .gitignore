@@ -27,6 +27,8 @@ tsconfig.build.json
 *.swp
 .vscode
 .awcache
+.env
+.env.test
 
 # Generated source-code #
 src/**/*.js

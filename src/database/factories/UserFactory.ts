@@ -2,9 +2,9 @@ import * as Faker from 'faker';
 import { define } from 'typeorm-seeding';
 import * as uuid from 'uuid';
 
-import { User } from '../../api/models/User';
+import { Users } from '../../api/models/Users';
 
-define(User, (faker: typeof Faker, settings: { role: string }) => {
+define(Users, (faker: typeof Faker, settings: { role: string }) => {
     const gender = faker.random.number(1);
     const firstName = faker.name.firstName(gender);
     const lastName = faker.name.lastName(gender);
@@ -12,7 +12,7 @@ define(User, (faker: typeof Faker, settings: { role: string }) => {
     const username = faker.internet.userName(firstName, lastName);
     const phone = faker.phone.phoneNumber();
 
-    const user = new User();
+    const user = new Users();
     user.id = uuid.v1();
     user.firstName = firstName;
     user.lastName = lastName;

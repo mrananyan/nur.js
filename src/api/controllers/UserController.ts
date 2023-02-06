@@ -6,7 +6,7 @@ import {
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
 
 import { UserNotFoundError } from '../errors/UserNotFoundError';
-import { User } from '../models/User';
+import { Users } from '../models/Users';
 import { UserService } from '../services/UserService';
 import { PhotoResponse } from './PhotoController';
 
@@ -50,27 +50,27 @@ export class UserController {
 
     @Get()
     @ResponseSchema(UserResponse, { isArray: true })
-    public find(): Promise<User[]> {
+    public find(): Promise<Users[]> {
         return this.userService.find();
     }
 
     @Get('/me')
     @ResponseSchema(UserResponse, { isArray: true })
-    public findMe(@Req() req: any): Promise<User[]> {
+    public findMe(@Req() req: any): Promise<Users[]> {
         return req.user;
     }
 
     @Get('/:id')
     @OnUndefined(UserNotFoundError)
     @ResponseSchema(UserResponse)
-    public one(@Param('id') id: string): Promise<User | undefined> {
+    public one(@Param('id') id: string): Promise<Users | undefined> {
         return this.userService.findOne(id);
     }
 
     @Post()
     @ResponseSchema(UserResponse)
-    public create(@Body() body: CreateUserBody): Promise<User> {
-        const user = new User();
+    public create(@Body() body: CreateUserBody): Promise<Users> {
+        const user = new Users();
         user.email = body.email;
         user.firstName = body.firstName;
         user.lastName = body.lastName;
@@ -82,8 +82,8 @@ export class UserController {
 
     @Put('/:id')
     @ResponseSchema(UserResponse)
-    public update(@Param('id') id: string, @Body() body: BaseUser): Promise<User> {
-        const user = new User();
+    public update(@Param('id') id: string, @Body() body: BaseUser): Promise<Users> {
+        const user = new Users();
         user.email = body.email;
         user.firstName = body.firstName;
         user.lastName = body.lastName;

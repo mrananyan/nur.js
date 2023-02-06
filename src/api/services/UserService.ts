@@ -4,7 +4,7 @@ import uuid from 'uuid';
 
 import { EventDispatcher, EventDispatcherInterface } from '../../decorators/EventDispatcher';
 import { Logger, LoggerInterface } from '../../decorators/Logger';
-import { User } from '../models/User';
+import { Users } from '../models/Users';
 import { UserRepository } from '../repositories/UserRepository';
 import { events } from '../subscribers/events';
 
@@ -17,17 +17,17 @@ export class UserService {
         @Logger(__filename) private log: LoggerInterface
     ) { }
 
-    public find(): Promise<User[]> {
+    public find(): Promise<Users[]> {
         this.log.info('Find all users');
         return this.userRepository.find({ relations: ['pets'] });
     }
 
-    public findOne(id: string): Promise<User | undefined> {
+    public findOne(id: string): Promise<Users | undefined> {
         this.log.info('Find one user');
         return this.userRepository.findOne({ id });
     }
 
-    public async create(user: User): Promise<User> {
+    public async create(user: Users): Promise<Users> {
         this.log.info('Create a new user => ', user.toString());
         user.id = uuid.v1();
         const newUser = await this.userRepository.save(user);
@@ -35,7 +35,7 @@ export class UserService {
         return newUser;
     }
 
-    public update(id: string, user: User): Promise<User> {
+    public update(id: string, user: Users): Promise<Users> {
         this.log.info('Update a user');
         user.id = id;
         return this.userRepository.save(user);

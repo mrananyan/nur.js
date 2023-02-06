@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { Connection } from 'typeorm';
 
-import { Photo } from '../../src/api/models/Photo';
+import { Photos } from '../../src/api/models/Photo';
 import { PhotoService } from '../../src/api/services/PhotoService';
 import { closeDatabase, createDatabaseConnection, migrateDatabase } from '../utils/database';
 import { configureLogger } from '../utils/logger';
@@ -30,7 +30,7 @@ describe('PetService', () => {
     // -------------------------------------------------------------------------
 
     test('should create a new pet in the database', async (done) => {
-        const photo = new Photo();
+        const photo = new Photos();
         photo.id = 'xxxxxxxx-xxxx-xxx-Nxxx-xxxxxxxxxxxx';
         photo.path = 'https://example.com/photo.jpg';
         photo.description = 'test';

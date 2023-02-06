@@ -3,10 +3,10 @@ import { Exclude } from 'class-transformer';
 import {IsEmpty, IsNotEmpty} from 'class-validator';
 import { BeforeInsert, Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
-import { Photo } from './Photo';
+import { Photos } from './Photos';
 
 @Entity()
-export class User {
+export class Users {
 
     public static hashPassword(password: string): Promise<string> {
         return new Promise((resolve, reject) => {
@@ -19,7 +19,7 @@ export class User {
         });
     }
 
-    public static comparePassword(user: User, password: string): Promise<boolean> {
+    public static comparePassword(user: Users, password: string): Promise<boolean> {
         return new Promise((resolve) => {
             bcrypt.compare(password, user.password, (err, res) => {
                 resolve(res === true);
@@ -55,8 +55,8 @@ export class User {
     @Column()
     public phone: string;
 
-    @OneToMany(() => Photo, photo => photo.user)
-    public photos: Photo[];
+    @OneToMany(() => Photos, photo => photo.user)
+    public photos: Photos[];
 
     public toString(): string {
         return `${this.firstName} ${this.lastName} (${this.email})`;
@@ -64,7 +64,7 @@ export class User {
 
     @BeforeInsert()
     public async hashPassword(): Promise<void> {
-        this.password = await User.hashPassword(this.password);
+        this.password = await Users.hashPassword(this.password);
     }
 
 }

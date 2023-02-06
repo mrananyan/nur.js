@@ -1,25 +1,9 @@
-# True Api - elegant backend kit
-### Features
+## Nur.js - easy to use, fast and secure framework
+Nur.js is a Laravel-like framework for Node.js, ready to give you out-of-the-box rich functionality to create a REST or GraphQL API, testesting and go to production faster.
 
-- **Beautiful and elegant Code**
-- **Easy API Testing** 
-- **Dependency Injection**
-- **Simplified Database Query**
-- **Clear Structure**
-- **Easy Exception Handling** 
-- **Smart Validation**
-- **Custom Validators**
-- **REST API documentation via Swagger** 
-- **GraphQL API documentation via GraphQL Editor** 
-- **API Monitoring**
-- **Integrated Testing via Jest**
-- **E2E API Testing via supertest**
-- **Basic Security Features by Helmet**
-- **Easy event dispatching**
-- **Fast Database Building with TypeORM**
-- **Easy Data Seeding**
-- **DataLoaders**
+<h4 style="color: indianred">The current version, 1.1.0, is in beta testing and is not an LTS version, so there may be some issues. You are free to open an <u>issue report</u> or <u>contribute</u>.</h4>
 
+<hr />
 ## ❯ Table of Contents
 
 - [Getting Started](#-getting-started)
@@ -47,6 +31,10 @@ Install [Node.js and NPM](https://nodejs.org/en/download/)
 
 - on OSX use [homebrew](http://brew.sh) `brew install node`
 - on Windows use [chocolatey](https://chocolatey.org/) `choco install nodejs`
+- on Debian and Ubuntu `apt install node`
+- on RHEL and CentOS `yum install node`
+- on Fedora `dnf install node`
+- on Arch and Manjaro `pacman -Syu node`
 
 Install yarn globally
 
@@ -60,7 +48,10 @@ Install a MySQL database.
 
 ### Step 2: Create new Project
 
-Fork or download this project. Configure your package.json for your new project.
+Clone this repository
+```bash
+git clone https://github.com/mrananyan/nurjs  YOUR_PROJECT_NAME
+```
 
 Then copy the `.env.example` file and rename it to `.env`. In this file you have to add your database connection information.
 

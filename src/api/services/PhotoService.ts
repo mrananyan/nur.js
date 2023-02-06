@@ -4,8 +4,8 @@ import uuid from 'uuid';
 
 import { EventDispatcher, EventDispatcherInterface } from '../../decorators/EventDispatcher';
 import { Logger, LoggerInterface } from '../../decorators/Logger';
-import { Photo } from '../models/Photo';
-import { User } from '../models/User';
+import { Photos } from '../models/Photo';
+import { Users } from '../models/Users';
 import { PhotoRepository } from '../repositories/PhotoRepository';
 import { events } from '../subscribers/events';
 
@@ -18,12 +18,12 @@ export class PhotoService {
         @Logger(__filename) private log: LoggerInterface
     ) { }
 
-    public find(): Promise<Photo[]> {
+    public find(): Promise<Photos[]> {
         this.log.info('Find all Photos');
         return this.photoRepository.find();
     }
 
-    public findByUser(user: User): Promise<Photo[]> {
+    public findByUser(user: Users): Promise<Photos[]> {
         this.log.info('Find all photos of the user', user.toString());
         return this.photoRepository.find({
             where: {
@@ -32,12 +32,12 @@ export class PhotoService {
         });
     }
 
-    public findOne(id: string): Promise<Photo | undefined> {
+    public findOne(id: string): Promise<Photos | undefined> {
         this.log.info('Find one photo');
         return this.photoRepository.findOne({ id });
     }
 
-    public async create(photo: Photo): Promise<Photo> {
+    public async create(photo: Photos): Promise<Photos> {
         this.log.info('Create a new photo => ', photo.toString());
         photo.id = uuid.v1();
         const newPhoto = await this.photoRepository.save(photo);
@@ -45,7 +45,7 @@ export class PhotoService {
         return newPhoto;
     }
 
-    public update(id: string, photo: Photo): Promise<Photo> {
+    public update(id: string, photo: Photos): Promise<Photos> {
         this.log.info('Update a photo');
         photo.id = id;
         return this.photoRepository.save(photo);

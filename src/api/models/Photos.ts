@@ -1,10 +1,10 @@
 import {IsEmpty, IsNotEmpty} from 'class-validator';
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 
-import { User } from './User';
+import { Users } from './Users';
 
 @Entity()
-export class Photo {
+export class Photos {
 
     @PrimaryColumn('uuid')
     public id: string;
@@ -27,9 +27,9 @@ export class Photo {
     })
     public userId: string;
 
-    @ManyToOne(() => User, user => user.photos)
+    @ManyToOne(() => Users, user => user.photos)
     @JoinColumn({ name: 'user_id' })
-    public user: User;
+    public user: Users;
 
     public toString(): string {
         return `${this.path}`;

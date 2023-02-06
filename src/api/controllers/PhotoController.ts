@@ -5,7 +5,7 @@ import {
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
 
 import { PhotoNotFoundError } from '../errors/PhotoNotFoundError';
-import { Photo } from '../models/Photo';
+import { Photos } from '../models/Photo';
 import { PhotoService } from '../services/PhotoService';
 import { UserResponse } from './UserController';
 
@@ -45,21 +45,21 @@ export class PhotoController {
 
     @Get()
     @ResponseSchema(PhotoResponse, { isArray: true })
-    public find(): Promise<Photo[]> {
+    public find(): Promise<Photos[]> {
         return this.photoService.find();
     }
 
     @Get('/:id')
     @OnUndefined(PhotoNotFoundError)
     @ResponseSchema(PhotoResponse)
-    public one(@Param('id') id: string): Promise<Photo | undefined> {
+    public one(@Param('id') id: string): Promise<Photos | undefined> {
         return this.photoService.findOne(id);
     }
 
     @Post()
     @ResponseSchema(PhotoResponse)
-    public create(@Body({ required: true }) body: CreatePhotoBody): Promise<Photo> {
-        const photo = new Photo();
+    public create(@Body({ required: true }) body: CreatePhotoBody): Promise<Photos> {
+        const photo = new Photos();
         photo.kind = body.kind;
         photo.path = body.path;
         photo.description = body.description;
@@ -70,8 +70,8 @@ export class PhotoController {
 
     @Put('/:id')
     @ResponseSchema(PhotoResponse)
-    public update(@Param('id') id: string, @Body() body: BasePhoto): Promise<Photo> {
-        const photo = new Photo();
+    public update(@Param('id') id: string, @Body() body: BasePhoto): Promise<Photos> {
+        const photo = new Photos();
         photo.kind = body.kind;
         photo.path = body.path;
         photo.description = body.description;

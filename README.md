@@ -1,4 +1,4 @@
-![](https://nurjs.red-m.tech/nur.png "Nur.js") 
+<img style="margin: 0 auto" height="200px" src="https://nurjs.red-m.tech/nur.png"/> 
 
 # Nur.js - easy to use, fast and secure framework
 Nur.js is a Laravel-like framework for Node.js, ready to give you out-of-the-box rich functionality to create a REST or GraphQL API, testesting and go to production faster.
@@ -6,6 +6,7 @@ Nur.js is a Laravel-like framework for Node.js, ready to give you out-of-the-box
 <h4 style="color: indianred">The current version, 1.1.0, is in beta testing and is not an LTS version, so there may be some issues. You are free to open an <u>issue report</u> or <u>contribute</u>.</h4>
 
 <hr />
+
 ## ❯ Table of Contents
 
 - [Getting Started](#-getting-started)

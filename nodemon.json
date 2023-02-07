@@ -1,5 +1,5 @@
 {
-    "delay": "0",
+    "delay": 0,
     "execMap": {
         "ts": "node -r ts-node/register"
     },

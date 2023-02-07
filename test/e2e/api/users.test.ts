@@ -3,7 +3,7 @@ import request from 'supertest';
 import { runSeed } from 'typeorm-seeding';
 
 import { Users } from '../../../src/api/models/Users';
-import { CreatePhotos } from '../../../src/database/seeds/CreateUser';
+import { CreatePhotos } from '../../../src/database/seeds/CreatePhotos';
 import { closeDatabase } from '../../utils/database';
 import { BootstrapSettings } from '../utils/bootstrap';
 import { prepareServer } from '../utils/server';

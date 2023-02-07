@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { Connection } from 'typeorm';
 
-import { Photos } from '../../src/api/models/Photo';
+import { Photos } from '../../src/api/models/Photos';
 import { PhotoService } from '../../src/api/services/PhotoService';
 import { closeDatabase, createDatabaseConnection, migrateDatabase } from '../utils/database';
 import { configureLogger } from '../utils/logger';

@@ -1,26 +1,28 @@
 {
-  "name": "true-api",
-  "version": "1.0.0",
-  "description": "Elegant, beautiful and well designed backend starter kit with charisma.",
+  "name": "nur.js",
+  "version": "1.1.0",
+  "description": "The missing comilatly ready to go Node.js framework.",
   "main": "src/app.ts",
   "scripts": {
-    "start": "nps",
+    "start": "nps serve",
     "test": "npm start test",
     "build": "npm start build",
     "presetup": "yarn install",
     "setup": "npm start config && npm start setup.script"
   },
-  "repository": "git+ssh://git@github.com/mrananyan/true-api.git",
+  "repository": "git+ssh://git@github.com/mrananyan/nurjs.git",
   "keywords": [
-    "NodeJS",
+    "Node.js",
     "TypeScript",
     "Express",
     "REST",
     "MySQL",
     "PostgreSQL",
-    "Starter-kit"
+    "GraphQL",
+    "TypeORM",
+    "JWT"
   ],
-  "homepage": "https://github.com/mrananyan/true-api",
+  "homepage": "https://nurjs.red-m.tech",
   "author": "Sargis Ananyan <ananyan@dr.com>",
   "dependencies": {
     "@types/superagent": "^4.1.14",
@@ -86,7 +88,7 @@
     "testEnvironment": "node",
     "setupTestFrameworkScriptFile": "./test/unit/lib/setup.ts"
   },
-  "license": "MIT",
+  "license": "BSD",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/bluebird": "^3.5.18",

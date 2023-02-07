@@ -4,7 +4,7 @@ import uuid from 'uuid';
 
 import { EventDispatcher, EventDispatcherInterface } from '../../decorators/EventDispatcher';
 import { Logger, LoggerInterface } from '../../decorators/Logger';
-import { Photos } from '../models/Photo';
+import { Photos } from '../models/Photos';
 import { Users } from '../models/Users';
 import { PhotoRepository } from '../repositories/PhotoRepository';
 import { events } from '../subscribers/events';

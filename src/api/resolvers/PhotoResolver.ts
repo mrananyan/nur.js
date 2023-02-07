@@ -5,7 +5,7 @@ import { Service } from 'typedi';
 import { DLoader } from '../../decorators/DLoader';
 import { Logger, LoggerInterface } from '../../decorators/Logger';
 import { Context } from '../Context';
-import { Photos as PhotoModel } from '../models/Photo';
+import { Photos as PhotoModel } from '../models/Photos';
 import { Users as UserModel } from '../models/Users';
 import { PhotoService } from '../services/PhotoService';
 import { PhotoInput } from '../types/input/PhotoInput';

@@ -5,7 +5,7 @@ import {
 import { OpenAPI, ResponseSchema } from 'routing-controllers-openapi';
 
 import { PhotoNotFoundError } from '../errors/PhotoNotFoundError';
-import { Photos } from '../models/Photo';
+import { Photos } from '../models/Photos';
 import { PhotoService } from '../services/PhotoService';
 import { UserResponse } from './UserController';
 

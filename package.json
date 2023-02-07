@@ -1,7 +1,7 @@
 {
   "name": "nur.js",
   "version": "1.1.0",
-  "description": "The missing comilatly ready to go Node.js framework.",
+  "description": "The missing compliantly ready to go Node.js framework.",
   "main": "src/app.ts",
   "scripts": {
     "start": "nps serve",
@@ -10,7 +10,7 @@
     "presetup": "yarn install",
     "setup": "npm start config && npm start setup.script"
   },
-  "repository": "git+ssh://git@github.com/mrananyan/nurjs.git",
+  "repository": "git+shttps://github.com/mrananyan/nur.js",
   "keywords": [
     "Node.js",
     "TypeScript",

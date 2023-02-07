@@ -1,6 +1,4 @@
-<center>
-    <img height="160px" src="https://nurjs.red-m.tech/nur.png" alt="Nur.js" />
-</center>
+![](https://nurjs.red-m.tech/nur.png "Nur.js") 
 
 # Nur.js - easy to use, fast and secure framework
 Nur.js is a Laravel-like framework for Node.js, ready to give you out-of-the-box rich functionality to create a REST or GraphQL API, testesting and go to production faster.
@@ -64,7 +62,7 @@ Create a new database with the name you have in your `.env`-file.
 Then setup your application environment.
 
 ```bash
-yarn run setup
+yarn setup
 ```
 
 > This installs all dependencies with yarn. After that it migrates the database and seeds some test data into it. So after that your development environment is ready to use.
@@ -74,7 +72,7 @@ yarn run setup
 Go to the project dir and start your app with this yarn script.
 
 ```bash
-yarn start serve
+yarn start
 ```
 
 > This starts a local server using `nodemon`, which will watch for any file changes and will restart the server according to these changes.
@@ -101,7 +99,7 @@ All script are defined in the `package-scripts.js` file, but the most important 
 
 ### Running in dev mode
 
-- Run `yarn start serve` to start nodemon with ts-node, to serve the app.
+- Run `yarn start` to start nodemon with ts-node, to serve the app.
 - The server address will be displayed to you as `http://0.0.0.0:3000`
 
 ### Building the project and run it

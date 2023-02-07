@@ -1,5 +1,5 @@
 <center>
-    <img  height="2560px" src="https://nurjs.red-m.tech/nur.png"/> 
+    <img  height="256px" src="https://nurjs.red-m.tech/nur.png"/> 
 
 </center>
 
